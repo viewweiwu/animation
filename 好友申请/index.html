@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="message">
+    <div class="avatar">
+      <img src="./images/avatar.jpg" width="95" height="95" alt="">
+    </div>
+    <div class="info">
+      收到了来自 View 的好友申请...
+    </div>
+    <div class="footer">
+      <button class="btn btn-close">
+        <div class="btn-close-before"></div>
+        <div class="btn-close-after"></div>
+      </button>
+      <button class="btn btn-ok">
+        <div class="btn-ok-before"></div>
+        <div class="btn-ok-after"></div>
+      </button>
+    </div>
+    <div class="message-bg">
+      <div class="message-bg-white"></div>
+      <div class="message-bg-close-shadow"></div>
+      <div class="message-bg-close"></div>
+      <div class="message-bg-ok-shadow"></div>
+      <div class="message-bg-ok"></div>
+    </div>
+  </div>
+  <script>
+    window.onload = () => {
+      let $ = (selector) => document.querySelector(selector)
+      classList = $('.message').classList
+      $('.btn-ok').addEventListener('click', () => {
+        classList.remove('close')
+        classList.add('ok')
+      })
+      $('.btn-close').addEventListener('click', () => {
+        classList.remove('ok')
+        classList.add('close')
+      })
+    }
+  </script>
+</body>
+</html>
+

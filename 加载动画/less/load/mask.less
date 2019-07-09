@@ -1,0 +1,68 @@
+.mask {
+  @wait: @t * 1.2;
+  .center();
+  width: @s8;
+  height: @s8;
+  overflow: hidden;
+  transform: translate(-50%, -50%) rotate(45deg);
+
+  &-top,
+  &-bottom {
+    width: 100%;
+    height: 0;
+    background-color: @primary;
+    position: absolute;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      left: 0;
+      width: 100%;
+      height: @s2;
+      background-color: @sub;
+      position: absolute;
+    }
+  }
+
+  &-top {
+    animation: mask-top @t @wait forwards;
+    
+    &::before {
+      top: @s2;
+    }
+  }
+
+  &-bottom {
+    bottom: 0;
+    animation: mask-bottom @t @wait forwards;
+
+    &::before {
+      bottom: @s2;
+      background-color: lighten(@primary, 40%);
+    }
+  }
+
+  &-exit {
+    width: 100%;
+    height: 100%;
+    background-color: @bg;
+    position: absolute;
+    transform: translateY(-100%);
+    animation: mask-exit @t * .5  @wait + @t forwards;
+  }
+}
+
+@keyframes mask-top {
+  0% { height: 1px; transform: translateX(-100%); }
+  50% { height: 1px; transform: translate(0); }
+  100% { height: 50%; transform: translate(0); }
+}
+@keyframes mask-bottom {
+  0% { height: 1px; transform: translateX(100%); }
+  50% { height: 1px; transform: translate(0); }
+  100% { height: 50%; transform: translate(0); }
+}
+@keyframes mask-exit {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
