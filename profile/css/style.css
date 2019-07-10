@@ -15,7 +15,7 @@ body {
   left: 0;
   position: absolute;
 }
-.squre {
+.load-squre {
   top: 50%;
   left: 50%;
   position: absolute;
@@ -31,12 +31,12 @@ body {
   transform: translate(-50%, -50%) rotate(45deg);
   transform-origin: center center;
 }
-.squre-item {
+.load-squre-item {
   background-color: #cccccc;
   position: relative;
   overflow: hidden;
 }
-.squre-item::after {
+.load-squre-item::after {
   content: '';
   bottom: 0;
   left: 0;
@@ -45,12 +45,12 @@ body {
   background-color: #4c4c4c;
   position: absolute;
   transform: translateY(100%);
-  animation: squre-item 3s infinite;
+  animation: load-squre-item 3s infinite;
 }
-.squre-item:nth-child(2n + 1)::after {
+.load-squre-item:nth-child(2n + 1)::after {
   animation-delay: 0.6s;
 }
-@keyframes squre-item {
+@keyframes load-squre-item {
   0% {
     transform: translateY(100%);
   }
@@ -67,7 +67,7 @@ body {
     transform: translateY(-100%);
   }
 }
-.line {
+.load-line {
   top: 50%;
   left: 50%;
   position: absolute;
@@ -77,39 +77,39 @@ body {
   overflow: hidden;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.line-item {
+.load-line-item {
   background-color: #4c4c4c;
   position: absolute;
 }
-.line-item:nth-child(1) {
+.load-line-item:nth-child(1) {
   width: 100%;
   height: 1px;
   top: 0;
   left: 0;
-  animation: line-item-1 1.5s infinite;
+  animation: load-line-item-1 1.5s infinite;
 }
-.line-item:nth-child(2) {
+.load-line-item:nth-child(2) {
   width: 1px;
   height: 100%;
   top: 0;
   right: 0;
-  animation: line-item-2 1.5s infinite;
+  animation: load-line-item-2 1.5s infinite;
 }
-.line-item:nth-child(3) {
+.load-line-item:nth-child(3) {
   width: 100%;
   height: 1px;
   right: 0;
   bottom: 0;
-  animation: line-item-3 1.5s infinite;
+  animation: load-line-item-3 1.5s infinite;
 }
-.line-item:nth-child(4) {
+.load-line-item:nth-child(4) {
   width: 1px;
   height: 100%;
   bottom: 0;
   left: 0;
-  animation: line-item-4 1.5s infinite;
+  animation: load-line-item-4 1.5s infinite;
 }
-@keyframes line-item-1 {
+@keyframes load-line-item-1 {
   0% {
     transform: translateX(-100%);
   }
@@ -123,7 +123,7 @@ body {
     transform: translateX(100%);
   }
 }
-@keyframes line-item-2 {
+@keyframes load-line-item-2 {
   0% {
     transform: translateY(-100%);
   }
@@ -137,7 +137,7 @@ body {
     transform: translateY(100%);
   }
 }
-@keyframes line-item-3 {
+@keyframes load-line-item-3 {
   0% {
     transform: translateX(100%);
   }
@@ -151,7 +151,7 @@ body {
     transform: translateX(-100%);
   }
 }
-@keyframes line-item-4 {
+@keyframes load-line-item-4 {
   0% {
     transform: translateY(100%);
   }
@@ -165,7 +165,7 @@ body {
     transform: translateY(-100%);
   }
 }
-.point {
+.load-point {
   top: 50%;
   left: 50%;
   position: absolute;
@@ -174,34 +174,34 @@ body {
   height: 200px;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.point-item {
+.load-point-item {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #4c4c4c;
   position: absolute;
 }
-.point-item:nth-child(1) {
+.load-point-item:nth-child(1) {
   top: -5px;
   left: -5px;
-  animation: point-item-1 1.5s infinite;
+  animation: load-point-item-1 1.5s infinite;
 }
-.point-item:nth-child(2) {
+.load-point-item:nth-child(2) {
   top: -5px;
   right: -5px;
-  animation: point-item-2 1.5s infinite;
+  animation: load-point-item-2 1.5s infinite;
 }
-.point-item:nth-child(3) {
+.load-point-item:nth-child(3) {
   right: -5px;
   bottom: -5px;
-  animation: point-item-3 1.5s infinite;
+  animation: load-point-item-3 1.5s infinite;
 }
-.point-item:nth-child(4) {
+.load-point-item:nth-child(4) {
   left: -5px;
   bottom: -5px;
-  animation: point-item-4 1.5s infinite;
+  animation: load-point-item-4 1.5s infinite;
 }
-@keyframes point-item-1 {
+@keyframes load-point-item-1 {
   0% {
     transform: translateX(0);
   }
@@ -215,7 +215,7 @@ body {
     transform: translateX(200px);
   }
 }
-@keyframes point-item-2 {
+@keyframes load-point-item-2 {
   0% {
     transform: translateY(0);
   }
@@ -229,7 +229,7 @@ body {
     transform: translateY(200px);
   }
 }
-@keyframes point-item-3 {
+@keyframes load-point-item-3 {
   0% {
     transform: translateX(0);
   }
@@ -243,7 +243,7 @@ body {
     transform: translateX(-200px);
   }
 }
-@keyframes point-item-4 {
+@keyframes load-point-item-4 {
   0% {
     transform: translateY(0);
   }
@@ -257,7 +257,7 @@ body {
     transform: translateY(-200px);
   }
 }
-.bar {
+.load-bar {
   top: 50%;
   left: 50%;
   position: absolute;
@@ -266,32 +266,32 @@ body {
   height: 15px;
   margin-top: 200px;
 }
-.bar-process {
+.load-bar-process {
   width: 100%;
   height: 100%;
   background-color: #cccccc;
   overflow: hidden;
   position: absolute;
-  animation: bar-show 1ms 1.8s forwards;
+  animation: load-bar-show 1ms 1.8s forwards;
 }
-.bar-process::after {
+.load-bar-process::after {
   content: '';
   width: 100%;
   height: 100%;
   background-color: #4c4c4c;
-  animation: bar-process 1.5s forwards ease-in;
+  animation: load-bar-process 1.5s forwards ease-in;
   position: absolute;
 }
-.bar-border {
+.load-bar-border {
   top: -7.5px;
   left: -10px;
   width: 220px;
   height: 30px;
   position: relative;
-  animation: bar-show 1ms 1.8s forwards;
+  animation: load-bar-show 1ms 1.8s forwards;
 }
-.bar-border::before,
-.bar-border::after {
+.load-bar-border::before,
+.load-bar-border::after {
   content: '';
   top: 0;
   width: 10px;
@@ -299,15 +299,15 @@ body {
   border: 1px solid #4c4c4c;
   position: absolute;
 }
-.bar-border::before {
+.load-bar-border::before {
   left: 0;
   border-right: none;
 }
-.bar-border::after {
+.load-bar-border::after {
   right: 0;
   border-left: none;
 }
-.bar-mask {
+.load-bar-mask {
   top: -50%;
   left: -10px;
   width: 220px;
@@ -315,7 +315,7 @@ body {
   position: absolute;
   overflow: hidden;
 }
-.bar-mask::after {
+.load-bar-mask::after {
   content: '';
   top: 0;
   left: 0;
@@ -325,9 +325,9 @@ body {
   transform: translateY(-100%);
   background-color: #4c4c4c;
   animation-delay: 1.5s;
-  animation: bar-mask 0.75s 1.5s forwards;
+  animation: load-bar-mask 0.75s 1.5s forwards;
 }
-@keyframes bar-process {
+@keyframes load-bar-process {
   0% {
     transform: translateX(-100%);
   }
@@ -335,7 +335,7 @@ body {
     transform: translateX(0);
   }
 }
-@keyframes bar-show {
+@keyframes load-bar-show {
   0% {
     opacity: 1;
   }
@@ -343,7 +343,7 @@ body {
     opacity: 0;
   }
 }
-@keyframes bar-mask {
+@keyframes load-bar-mask {
   0% {
     transform: translateY(-100%);
   }
@@ -357,7 +357,7 @@ body {
     transform: translateY(100%);
   }
 }
-.mask {
+.load-mask {
   top: 50%;
   left: 50%;
   position: absolute;
@@ -367,16 +367,16 @@ body {
   overflow: hidden;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.mask-top,
-.mask-bottom {
+.load-mask-top,
+.load-mask-bottom {
   width: 100%;
   height: 0;
   background-color: #4c4c4c;
   position: absolute;
   overflow: hidden;
 }
-.mask-top::before,
-.mask-bottom::before {
+.load-mask-top::before,
+.load-mask-bottom::before {
   content: '';
   left: 0;
   width: 100%;
@@ -384,29 +384,29 @@ body {
   background-color: #cccccc;
   position: absolute;
 }
-.mask-top {
-  animation: mask-top 1.5s 1.8s forwards;
+.load-mask-top {
+  animation: load-mask-top 1.5s 1.8s forwards;
 }
-.mask-top::before {
+.load-mask-top::before {
   top: 100px;
 }
-.mask-bottom {
+.load-mask-bottom {
   bottom: 0;
-  animation: mask-bottom 1.5s 1.8s forwards;
+  animation: load-mask-bottom 1.5s 1.8s forwards;
 }
-.mask-bottom::before {
+.load-mask-bottom::before {
   bottom: 100px;
   background-color: #b2b2b2;
 }
-.mask-exit {
+.load-mask-exit {
   width: 100%;
   height: 100%;
   background-color: #e2e0e2;
   position: absolute;
   transform: translateY(-100%);
-  animation: mask-exit 0.75s 3.3s forwards;
+  animation: load-mask-exit 0.75s 3.3s forwards;
 }
-@keyframes mask-top {
+@keyframes load-mask-top {
   0% {
     height: 1px;
     transform: translateX(-100%);
@@ -420,7 +420,7 @@ body {
     transform: translate(0);
   }
 }
-@keyframes mask-bottom {
+@keyframes load-mask-bottom {
   0% {
     height: 1px;
     transform: translateX(100%);
@@ -434,7 +434,7 @@ body {
     transform: translate(0);
   }
 }
-@keyframes mask-exit {
+@keyframes load-mask-exit {
   0% {
     transform: translateY(-100%);
   }

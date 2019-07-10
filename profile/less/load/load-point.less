@@ -1,11 +1,11 @@
-.point {
+.load-point {
   .center();
   width: @s4;
   height: @s4;
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.point-item {
+.load-point-item {
   @l: 10px;
   @p: -@l / 2;
   width: @l;
@@ -17,29 +17,29 @@
   &:nth-child(1) {
     top: @p;
     left: @p;
-    animation: point-item-1 @t infinite;
+    animation: load-point-item-1 @t infinite;
   }
 
   &:nth-child(2) {
     top: @p;
     right: @p;
-    animation: point-item-2 @t infinite;
+    animation: load-point-item-2 @t infinite;
   }
 
   &:nth-child(3) {
     right: @p;
     bottom: @p;
-    animation: point-item-3 @t infinite;
+    animation: load-point-item-3 @t infinite;
   }
 
   &:nth-child(4) {
     left: @p;
     bottom: @p;
-    animation: point-item-4 @t infinite;
+    animation: load-point-item-4 @t infinite;
   }
 }
 
-@keyframes point-item-1 {
+@keyframes load-point-item-1 {
   0% {
     transform: translateX(0);
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@keyframes point-item-2 {
+@keyframes load-point-item-2 {
   0% {
     transform: translateY(0);
   }
@@ -75,7 +75,7 @@
   }
 }
 
-@keyframes point-item-3 {
+@keyframes load-point-item-3 {
   0% {
     transform: translateX(0);
   }
@@ -93,7 +93,7 @@
   }
 }
 
-@keyframes point-item-4 {
+@keyframes load-point-item-4 {
   0% {
     transform: translateY(0);
   }

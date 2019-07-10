@@ -1,4 +1,4 @@
-.mask {
+.load-mask {
   @wait: @t * 1.2;
   .center();
   width: @s8;
@@ -25,7 +25,7 @@
   }
 
   &-top {
-    animation: mask-top @t @wait forwards;
+    animation: load-mask-top @t @wait forwards;
     
     &::before {
       top: @s2;
@@ -34,7 +34,7 @@
 
   &-bottom {
     bottom: 0;
-    animation: mask-bottom @t @wait forwards;
+    animation: load-mask-bottom @t @wait forwards;
 
     &::before {
       bottom: @s2;
@@ -48,21 +48,21 @@
     background-color: @bg;
     position: absolute;
     transform: translateY(-100%);
-    animation: mask-exit @t * .5  @wait + @t forwards;
+    animation: load-mask-exit @t * .5  @wait + @t forwards;
   }
 }
 
-@keyframes mask-top {
+@keyframes load-mask-top {
   0% { height: 1px; transform: translateX(-100%); }
   50% { height: 1px; transform: translate(0); }
   100% { height: 50%; transform: translate(0); }
 }
-@keyframes mask-bottom {
+@keyframes load-mask-bottom {
   0% { height: 1px; transform: translateX(100%); }
   50% { height: 1px; transform: translate(0); }
   100% { height: 50%; transform: translate(0); }
 }
-@keyframes mask-exit {
+@keyframes load-mask-exit {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(0); }
 }

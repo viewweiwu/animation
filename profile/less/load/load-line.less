@@ -1,4 +1,4 @@
-.line {
+.load-line {
   .center();
   width: @s4;
   height: @s4;
@@ -6,7 +6,7 @@
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.line-item {
+.load-line-item {
   background-color: @primary;
   position: absolute;
 
@@ -15,7 +15,7 @@
     height: 1px;
     top: 0;
     left: 0;
-    animation: line-item-1 @t infinite;
+    animation: load-line-item-1 @t infinite;
   }
 
   &:nth-child(2) {
@@ -23,7 +23,7 @@
     height: 100%;
     top: 0;
     right: 0;
-    animation: line-item-2 @t infinite;
+    animation: load-line-item-2 @t infinite;
   }
 
   &:nth-child(3) {
@@ -31,7 +31,7 @@
     height: 1px;
     right: 0;
     bottom: 0;
-    animation: line-item-3 @t infinite;
+    animation: load-line-item-3 @t infinite;
   }
 
   &:nth-child(4) {
@@ -39,11 +39,11 @@
     height: 100%;
     bottom: 0;
     left: 0;
-    animation: line-item-4 @t infinite;
+    animation: load-line-item-4 @t infinite;
   }
 }
 
-@keyframes line-item-1 {
+@keyframes load-line-item-1 {
   0% {
     transform: translateX(-100%);
   }
@@ -61,7 +61,7 @@
   }
 }
 
-@keyframes line-item-2 {
+@keyframes load-line-item-2 {
   0% {
     transform: translateY(-100%);
   }
@@ -79,7 +79,7 @@
   }
 }
 
-@keyframes line-item-3 {
+@keyframes load-line-item-3 {
   0% {
     transform: translateX(100%);
   }
@@ -97,7 +97,7 @@
   }
 }
 
-@keyframes line-item-4 {
+@keyframes load-line-item-4 {
   0% {
     transform: translateY(100%);
   }
