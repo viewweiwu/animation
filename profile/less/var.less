@@ -11,7 +11,26 @@
 @sub: lighten(@primary, 50%);
 @bg: #e2e0e2;
 
+.origin {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
 
+.center () {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.text-center () {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .line-loop (@name) {
     .@{name} {

@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="root">
-      <div class="load">
+      <!-- <div class="load">
         <div class="load-squre">
           <div class="load-squre-item"></div>
           <div class="load-squre-item"></div>
@@ -43,8 +43,8 @@
           <div class="load-mask-bottom"></div>
           <div class="load-mask-exit"></div>
         </div>
-      </div>
-      <div class="main" style="display: none;">
+      </div> -->
+      <div class="main">
         <div class="main-squre">
           <div class="main-squre-around">
             <div class="main-squre-around-line">
@@ -117,6 +117,28 @@
             </div>
           </div>
         </div>
+        <div class="main-text">
+          <div class="main-text-left">
+            <div class="main-text-left-bg"></div>
+            <div class="main-text-left-info">Hello</div>
+            <div class="main-text-left-line"></div>
+            <div class="main-text-left-info2">
+              <span class="main-text-left-info2-content">Viewweiwu</span>
+            </div>
+            <div class="main-text-left-mask">
+              <div class="main-text-left-mask-item"></div>
+              <div class="main-text-left-mask-item"></div>
+              <div class="main-text-left-mask-item"></div>
+              <div class="main-text-left-mask-item"></div>
+              <div class="main-text-left-mask-item"></div>
+            </div>
+            <div class="main-text-left-info3">
+              <div class="main-text-left-info3-bg"></div>
+              <div class="main-text-left-info3-content">amazing</div>
+            </div>
+          </div>
+          <div class="main-text-right"></div>
+        </div>
       </div>
     </div>
 
@@ -124,10 +146,10 @@
       let t = 1000;
       window.onload = () => {
         let $ = (selector) => document.querySelector(selector)
-        setTimeout(() => {
-          $('.load').style.display = 'none';
-          $('.main').style.display = 'block';
-        }, t * 4)
+        // setTimeout(() => {
+        //   $('.load').style.display = 'none';
+        //   $('.main').style.display = 'block';
+        // }, t * 4)
       }
     </script>
   </body>
