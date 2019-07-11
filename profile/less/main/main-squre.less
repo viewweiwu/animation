@@ -1,0 +1,401 @@
+& {
+    @around-line: main-squre-around-line-item;
+    @around-point: main-squre-around-point-item;
+    @group-line: main-squre-group-line-item;
+    @group-point: main-squre-group-point-item;
+    // @p = @percent
+    // @n = @next step
+    @p: 5%;
+    @p2: @p * 2;
+    @p3: @p * 2;
+    @p4: @p * 4;
+    @p5: @p * 5;
+    @n: 40%;
+    @l: 10px;
+
+    .line-loop(@around-line);
+    .point-loop(@around-point, @l);
+
+    .line-loop(@group-line);
+    .point-loop(@group-point, @l);
+
+    .main-squre {
+        .center();
+        width: @s10;
+        height: @s10;
+        &-around,
+        &-group {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            position: absolute;
+        }
+        &-around {
+            &-line {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                &-item {
+                    opacity: 0;
+                    &:nth-child(1) {
+                        animation: ~'@{around-line}-1' @t3 forwards;
+                    }
+                    &:nth-child(2) {
+                        animation: ~'@{around-line}-2' @t3 forwards;
+                    }
+                    &:nth-child(3) {
+                        animation: ~'@{around-line}-3' @t3 forwards;
+                    }
+                    &:nth-child(4) {
+                        animation: ~'@{around-line}-4' @t3 forwards;
+                    }
+                }
+            }
+            &-point {
+                top: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                &-item {
+                    transform: scale(0);
+                    &:nth-child(1) {
+                        animation: ~'@{around-point}-1' @t3 ;
+                    }
+                    &:nth-child(2) {
+                        animation: ~'@{around-point}-2' @t3 forwards;
+                    }
+                    &:nth-child(3) {
+                        animation: ~'@{around-point}-3' @t3 forwards;
+                    }
+                    &:nth-child(4) {
+                        animation: ~'@{around-point}-4' @t3 forwards;
+                    }
+                }
+            }
+        }
+        &-group {
+            transform: rotate(45deg);
+            &-line {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                &-item {
+                    opacity: 0;
+                    animation-delay: @t !important;
+                    &:nth-child(1) {
+                        animation: ~'@{group-line}-1' @t3 forwards;
+                    }
+                    &:nth-child(2) {
+                        top: unset;
+                        bottom: 0;
+                        animation: ~'@{group-line}-2' @t3 forwards;
+                    }
+                    &:nth-child(3) {
+                        animation: ~'@{group-line}-3' @t3 forwards;
+                    }
+                    &:nth-child(4) {
+                        animation: ~'@{group-line}-4' @t3 forwards;
+                    }
+                }
+            }
+            &-point {
+                top: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                &-item {
+                    transform: scale(0);
+                    animation-delay: @t !important;
+                    &:nth-child(1) {
+                        animation: ~'@{group-point}-1' @t3 forwards;
+                    }
+                    &:nth-child(2) {
+                        top: unset;
+                        bottom: -@l / 2;
+                        animation: ~'@{group-point}-2' @t3 forwards;
+                    }
+                    &:nth-child(3) {
+                        animation: ~'@{group-point}-3' @t3 forwards;
+                    }
+                    &:nth-child(4) {
+                        top: -@l / 2;
+                        animation: ~'@{group-point}-4' @t3 forwards;
+                    }
+                }
+            }
+        }
+    }
+    .group-2 {
+        transform: rotate(22deg);
+        .main-squre-group-line-item {
+            animation-delay: @t * 1.5 !important;
+        }
+        .main-squre-group-point-item {
+            animation-delay: @t * 1.5 !important;
+        }
+    }
+    .group-3 {
+        transform: rotate(-22deg);
+        .main-squre-group-line-item {
+            animation-delay: @t * 2 !important;
+        }
+        .main-squre-group-point-item {
+            animation-delay: @t * 2 !important;
+        }
+    }
+    .around-2 {
+        transform: rotate(45deg);
+        .main-squre-around-line-item {
+            animation-delay: @t * 2.5 !important;
+        }
+        .main-squre-around-point-item {
+            animation-delay: @t * 2.5 !important;
+        }
+    }
+
+    @keyframes ~'@{around-line}-1' {
+        0%,
+        @{p4} {
+            transform: translateX(-100%);
+            opacity: 1;
+        }
+        @{n} {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ~'@{around-line}-2' {
+        0%,
+        @{p4} {
+            transform: translateY(-100%);
+            opacity: 1;
+        }
+        @{n} {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ~'@{around-line}-3' {
+        0%,
+        @{p4} {
+            transform: translateX(100%);
+            opacity: 1;
+        }
+        @{n} {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ~'@{around-line}-4' {
+        0%,
+        @{p4} {
+            transform: translateY(100%);
+            opacity: 1;
+        }
+        @{n} {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ~'@{around-point}-1' {
+        0% {
+            transform: translateX(0) scale(0);
+        }
+        @{p},
+        @{p4} {
+            transform: translateX(0) scale(1);
+        }
+        @{n},
+        100% {
+            transform: translateX(@s10) scale(0);
+        }
+    }
+    
+    @keyframes ~'@{around-point}-2' {
+        0%,
+        @{p} {
+            transform: translateY(0) scale(0);
+        }
+        @{p2},
+        @{p4} {
+            transform: translateY(0) scale(1);
+        }
+        @{n},
+        100% {
+            transform: translateY(@s10) scale(0);
+        }
+    }
+
+    @keyframes ~'@{around-point}-3' {
+        0%,
+        @{p2} {
+            transform: translateX(0) scale(0);
+        }
+        1@{p},
+        @{p4} {
+            transform: translateX(0) scale(1);
+        }
+        @{n},
+        100% {
+            transform: translateX(-@s10) scale(0);
+        }
+    }
+
+    @keyframes ~'@{around-point}-4' {
+        0%,
+        1@{p} {
+            transform: translateY(0) scale(0);
+        }
+        @{p4} {
+            transform: translateY(0) scale(1);
+        }
+        @{n},
+        100% {
+            transform: translateY(-@s10) scale(0);
+        }
+    }
+    
+    @keyframes ~'@{group-line}-1' {
+        0%,
+        @{p2} {
+            transform: translateX(-100%);
+            opacity: 1;
+        }
+        @{p5} {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ~'@{group-line}-2' {
+        0%,
+        @{p2} {
+            transform: translateY(100%);
+            opacity: 1;
+        }
+        @{p5} {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ~'@{group-line}-3' {
+        0%,
+        @{p2} {
+            transform: translateX(100%);
+            opacity: 1;
+        }
+        @{p5} {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ~'@{group-line}-4' {
+        0%,
+        @{p2} {
+            transform: translateY(-100%);
+            opacity: 1;
+        }
+        @{p5} {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 0;
+        }
+    }
+
+    @keyframes ~'@{group-point}-1' {
+        0% {
+            transform: translateX(0) scale(0);
+        }
+        @{p},
+        @{p2} {
+            transform: translateX(0) scale(1);
+        }
+        @{p5},
+        100% {
+            transform: translateX(@s10) scale(0);
+        }
+    }
+
+    @keyframes ~'@{group-point}-2' {
+        0% {
+            transform: translateY(0) scale(0);
+        }
+        @{p},
+        @{p2} {
+            transform: translateY(0) scale(1);
+        }
+        @{p5},
+        100% {
+            transform: translateY(-@s10) scale(0);
+        }
+    }
+
+    @keyframes ~'@{group-point}-3' {
+        0% {
+            transform: translateX(0) scale(0);
+        }
+        @{p},
+        @{p2} {
+            transform: translateX(0) scale(1);
+        }
+        @{p5},
+        100% {
+            transform: translateX(-@s10) scale(0);
+        }
+    }
+
+    @keyframes ~'@{group-point}-4' {
+        0% {
+            transform: translateY(0) scale(0);
+        }
+        @{p},
+        @{p2} {
+            transform: translateY(0) scale(1);
+        }
+        @{p5},
+        100% {
+            transform: translateY(@s10) scale(0);
+        }
+    }
+}

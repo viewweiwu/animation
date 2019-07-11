@@ -1,10 +1,76 @@
 @t: 1.5s;
 @t2: @t * 2;
+@t3: @t * 3;
 @s: 50px;
 @s2: @s * 2;
 @s3: @s * 3;
 @s4: @s * 4;
 @s8: @s * 8;
+@s10: @s * 10;
 @primary: #4c4c4c;
 @sub: lighten(@primary, 50%);
 @bg: #e2e0e2;
+
+
+
+.line-loop (@name) {
+    .@{name} {
+        background-color: @primary;
+        position: absolute;
+        &:nth-child(1) {
+            width: 100%;
+            height: 1px;
+            top: 0;
+            left: 0;
+        }
+        
+        &:nth-child(2) {
+            width: 1px;
+            height: 100%;
+            top: 0;
+            right: 0;
+        }
+        
+        &:nth-child(3) {
+            width: 100%;
+            height: 1px;
+            right: 0;
+            bottom: 0;
+        }
+        
+        &:nth-child(4) {
+            width: 1px;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.point-loop (@name, @l: 10px) {
+    @p: -@l / 2;
+    .@{name} {
+        @l: 10px;
+        width: @l;
+        height: @l;
+        border-radius: 50%;
+        background-color: @primary;
+        position: absolute;
+        &:nth-child(1) {
+          top: @p;
+          left: @p;
+        }
+        &:nth-child(2) {
+          top: @p;
+          right: @p;
+        }
+        &:nth-child(3) {
+          right: @p;
+          bottom: @p;
+        }
+        &:nth-child(4) {
+          left: @p;
+          bottom: @p;
+        }
+    }
+}

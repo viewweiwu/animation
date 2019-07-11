@@ -10,38 +10,112 @@
   <body>
     <div class="root">
       <div class="load">
-        <div class="squre">
-          <div class="squre-item"></div>
-          <div class="squre-item"></div>
-          <div class="squre-item"></div>
-          <div class="squre-item"></div>
-          <div class="squre-item"></div>
-          <div class="squre-item"></div>
-          <div class="squre-item"></div>
-          <div class="squre-item"></div>
-          <div class="squre-item"></div>
+        <div class="load-squre">
+          <div class="load-squre-item"></div>
+          <div class="load-squre-item"></div>
+          <div class="load-squre-item"></div>
+          <div class="load-squre-item"></div>
+          <div class="load-squre-item"></div>
+          <div class="load-squre-item"></div>
+          <div class="load-squre-item"></div>
+          <div class="load-squre-item"></div>
+          <div class="load-squre-item"></div>
         </div>
-        <div class="line">
-          <div class="line-item"></div>
-          <div class="line-item"></div>
-          <div class="line-item"></div>
-          <div class="line-item"></div>
+        <div class="load-line">
+          <div class="load-line-item"></div>
+          <div class="load-line-item"></div>
+          <div class="load-line-item"></div>
+          <div class="load-line-item"></div>
         </div>
-        <div class="point">
-          <div class="point-item"></div>
-          <div class="point-item"></div>
-          <div class="point-item"></div>
-          <div class="point-item"></div>
+        <div class="load-point">
+          <div class="load-point-item"></div>
+          <div class="load-point-item"></div>
+          <div class="load-point-item"></div>
+          <div class="load-point-item"></div>
         </div>
-        <div class="bar">
-          <div class="bar-process"></div>
-          <div class="bar-border"></div>
-          <div class="bar-mask"></div>
+        <div class="load-bar">
+          <div class="load-bar-process"></div>
+          <div class="load-bar-border"></div>
+          <div class="load-bar-load-mask"></div>
         </div>
-        <div class="mask">
-          <div class="mask-top"></div>
-          <div class="mask-bottom"></div>
-          <div class="mask-exit"></div>
+        <div class="load-mask">
+          <div class="load-mask-top"></div>
+          <div class="load-mask-bottom"></div>
+          <div class="load-mask-exit"></div>
+        </div>
+      </div>
+      <div class="main" style="display: none;">
+        <div class="main-squre">
+          <div class="main-squre-around">
+            <div class="main-squre-around-line">
+              <div class="main-squre-around-line-item"></div>
+              <div class="main-squre-around-line-item"></div>
+              <div class="main-squre-around-line-item"></div>
+              <div class="main-squre-around-line-item"></div>
+            </div>
+            <div class="main-squre-around-point">
+              <div class="main-squre-around-point-item"></div>
+              <div class="main-squre-around-point-item"></div>
+              <div class="main-squre-around-point-item"></div>
+              <div class="main-squre-around-point-item"></div>
+            </div>
+          </div>
+          <div class="main-squre-group">
+            <div class="main-squre-group-line">
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+            </div>
+            <div class="main-squre-group-point">
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+            </div>
+          </div>
+          <div class="main-squre-group group-2">
+            <div class="main-squre-group-line">
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+            </div>
+            <div class="main-squre-group-point">
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+            </div>
+          </div>
+          <div class="main-squre-group group-3">
+            <div class="main-squre-group-line">
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+              <div class="main-squre-group-line-item"></div>
+            </div>
+            <div class="main-squre-group-point">
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+              <div class="main-squre-group-point-item"></div>
+            </div>
+          </div>
+          <div class="main-squre-around around-2">
+            <div class="main-squre-around-line">
+              <div class="main-squre-around-line-item"></div>
+              <div class="main-squre-around-line-item"></div>
+              <div class="main-squre-around-line-item"></div>
+              <div class="main-squre-around-line-item"></div>
+            </div>
+            <div class="main-squre-around-point">
+              <div class="main-squre-around-point-item"></div>
+              <div class="main-squre-around-point-item"></div>
+              <div class="main-squre-around-point-item"></div>
+              <div class="main-squre-around-point-item"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -50,6 +124,10 @@
       let t = 1000;
       window.onload = () => {
         let $ = (selector) => document.querySelector(selector)
+        setTimeout(() => {
+          $('.load').style.display = 'none';
+          $('.main').style.display = 'block';
+        }, t * 4)
       }
     </script>
   </body>
