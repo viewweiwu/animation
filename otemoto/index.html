@@ -13,9 +13,39 @@
         <div class="chopsticks"></div>
     </div>
     <script>
-    if ('paintWorklet' in CSS) {
-        CSS.paintWorklet.addModule('./js/paint.js');
-    }
+        let el = document.querySelector('.packing-paper')
+        let [width, height] = [el.offsetWidth, el.offsetHeight]
+        let html = ''
+        for (let i = 0; i < width; i += 40) {
+            for (let j = 0; j < height; j+= 40) {
+                let { size, top, left, opacity, rotate } = getSakura(i, j)
+                let style = `
+                    top: ${top};
+                    left: ${left};
+                    background-size: ${size};
+                    opacity: ${opacity};
+                    transform: rotate(${rotate});
+                `
+                html += `<div class="sakura" style="${style.replace(/[\r\n\t\s]/g, '')}"></div>`
+            }
+        }
+        function getRandom(min = 0, max = 1) {
+            return min + Math.floor(Math.random() * (max - min + 1))
+        }
+        function getSakura(i, j) {
+            return {
+                size: getRandom(20, 40) + 'px',
+                top: getRandom(j - 15, j + 15) + 'px',
+                left: getRandom(i - 15, i + 15) + 'px',
+                opacity: getRandom(5, 10) / 10,
+                rotate: getRandom(0, 72) + 'deg'
+            }
+        }
+        el.innerHTML = html
+        // console.log(getRandom(0, 1))
+    // if ('paintWorklet' in CSS) {
+    //     CSS.paintWorklet.addModule('./js/paint.js');
+    // }
     </script>
 </body>
 </html> 
