@@ -14,13 +14,18 @@ body {
   position: fixed;
   transform: translate(-50%, -50%);
 }
+.otemoto:hover .packing-paper {
+  transform: translateX(-350px);
+}
 .packing-paper {
-  width: 100px;
-  height: 500px;
+  width: 300px;
+  height: 100px;
   background-color: #ec683d;
   background-repeat: no-repeat;
+  border-radius: 2px;
   position: relative;
   overflow: hidden;
+  transition: transform 300ms;
 }
 .sakura {
   width: 40px;
@@ -29,4 +34,18 @@ body {
   background-position: center center;
   position: absolute;
   background-image: url(../images/sakura.svg);
+}
+.chopsticks {
+  top: 50%;
+  left: 10px;
+  position: absolute;
+  transform: translateY(-50%);
+}
+.chopsticks-left,
+.chopsticks-right {
+  width: 600px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #d6b785;
+  clip-path: polygon(100% 0, 90% 0, 0 20%, 0 80%, 90% 100%, 100% 100%);
 }

@@ -9,43 +9,70 @@
 </head>
 <body>
     <div class="otemoto">
-        <div class="packing-paper"></div>
-        <div class="chopsticks"></div>
+        <div class="chopsticks">
+            <div class="chopsticks-left"></div>
+            <div class="chopsticks-right"></div>
+        </div>
+        <div class="packing-paper">
+            <canvas />
+        </div>
     </div>
     <script>
-        let el = document.querySelector('.packing-paper')
-        let [width, height] = [el.offsetWidth, el.offsetHeight]
-        let html = ''
-        for (let i = 0; i < width; i += 40) {
-            for (let j = 0; j < height; j+= 40) {
-                let { size, top, left, opacity, rotate } = getSakura(i, j)
-                let style = `
-                    top: ${top};
-                    left: ${left};
-                    background-size: ${size};
-                    opacity: ${opacity};
-                    transform: rotate(${rotate});
-                `
-                html += `<div class="sakura" style="${style.replace(/[\r\n\t\s]/g, '')}"></div>`
+        function Main () {
+            this.$canvas = document.querySelector('.packing-paper canvas')
+            this.$el = document.querySelector('.packing-paper')
+            this.ctx = this.$canvas.getContext('2d')
+            this.init()
+        }
+        Main.prototype = {
+            async init () {
+                let { $el, $canvas } = this
+                let [width, height] = [$el.offsetWidth, $el.offsetHeight]
+                $canvas.width = width
+                $canvas.height = height
+                this.width = width
+                this.height = height
+                await this.loadImage()
+                this.drawSakura()
+            },
+            loadImage () {
+                return new Promise(resolve => {
+                    let sakura = new Image()
+                    sakura.src = './images/sakura.svg'
+                    sakura.onload = () => {
+                        this.sakura = sakura
+                        resolve()
+                    }
+                })
+            },
+            drawSakura () {
+                let { ctx, width, height, sakura, getSakura } = this
+                for (let i = 0; i < width; i += 40) {
+                    for (let j = 0; j < height; j+= 40) {
+                        let { size, top, left, opacity, rotate } = getSakura.call(this, i, j)
+                        ctx.save()
+                        ctx.globalAlpha = opacity
+                        // ctx.rotate(rotate * Math.PI / 180)
+                        ctx.drawImage(sakura, 0, 0, sakura.width, sakura.height, left, top, size, size)
+                        ctx.restore()
+                    }
+                }
+            },
+            getRandom (min = 0, max = 1) {
+                return min + Math.floor(Math.random() * (max - min + 1))
+            },
+            getSakura (i, j) {
+                let { getRandom } = this
+                return {
+                    size: getRandom(20, 40),
+                    top: getRandom(j - 15, j + 15),
+                    left: getRandom(i - 15, i + 15),
+                    opacity: getRandom(5, 10) / 10,
+                    rotate: getRandom(0, 72)
+                }
             }
         }
-        function getRandom(min = 0, max = 1) {
-            return min + Math.floor(Math.random() * (max - min + 1))
-        }
-        function getSakura(i, j) {
-            return {
-                size: getRandom(20, 40) + 'px',
-                top: getRandom(j - 15, j + 15) + 'px',
-                left: getRandom(i - 15, i + 15) + 'px',
-                opacity: getRandom(5, 10) / 10,
-                rotate: getRandom(0, 72) + 'deg'
-            }
-        }
-        el.innerHTML = html
-        // console.log(getRandom(0, 1))
-    // if ('paintWorklet' in CSS) {
-    //     CSS.paintWorklet.addModule('./js/paint.js');
-    // }
+        new Main()
     </script>
 </body>
 </html> 
