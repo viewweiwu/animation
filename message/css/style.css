@@ -1,35 +1,149 @@
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
+  outline: none;
 }
 body {
+  height: 100vh;
   background-color: #f5f5f5;
+  user-select: none;
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
 }
 .message {
-  top: 30%;
+  top: 300px;
   left: 50%;
   width: 500px;
-  height: 200px;
+  height: 300px;
   transform: translate(-50%, -50%);
   position: absolute;
-  overflow: hidden;
+  cursor: pointer;
 }
 .message-envelope {
   width: 100%;
   height: 100%;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
-  background-color: #fff;
+  position: relative;
 }
-.message-envelope:hover .message-top {
-  transform: rotateX(90deg) rotateZ(45deg);
+.message-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  background-color: #266b74;
+  z-index: 0;
+  position: absolute;
+  transition: 300ms;
+}
+.message-bg.outing {
+  transform: translateY(600px);
+}
+.message-shadow {
+  content: '';
+  top: 1px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #266b74;
+  position: absolute;
+}
+.message-shadow.opening {
+  transition: 300ms;
+  z-index: 2;
+}
+.message-shadow.outing {
+  transition: 300ms;
+  transform: translateY(600px);
+}
+.message-content {
+  top: 10%;
+  width: 90%;
+  height: 90%;
+  line-height: 1em;
+  margin-left: 5%;
+  padding: 20px;
+  color: #266b74;
+  background-color: #fff;
+  position: relative;
+  transition: transform 300ms;
+  overflow: hidden;
+}
+.message-content.opening {
+  z-index: 10;
+}
+.message-content.open {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-150px);
+}
+.message-content.outing {
+  height: 650px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-150px);
+}
+.message-pack {
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.3));
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+}
+.message-pack::before {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  clip-path: polygon(0 20px, 10% 50px, 90% 50px, 100% 20px, 100% 100%, 0 100%);
+  position: absolute;
+}
+.message-pack.open,
+.message-pack.opening {
+  z-index: 11;
+  transition: 300ms;
+}
+.message-pack.outing {
+  transition: 300ms;
+  transform: translateY(600px);
 }
 .message-top {
   width: 500px;
-  height: 500px;
-  margin-top: -260px;
-  border-radius: 5px;
-  box-shadow: 4px 0 10px 5px rgba(0, 0, 0, 0.5);
-  background-color: #fff;
-  transform: rotateX(60deg) rotateZ(45deg);
+  height: 300px;
+  filter: drop-shadow(5px 10px 5px rgba(0, 0, 0, 0.3));
+  z-index: 1;
   position: absolute;
   transition: 300ms;
+  transform-origin: top center;
+}
+.message-top::before {
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #328e9b;
+  z-index: 1;
+  transform-origin: top center;
+  clip-path: polygon(0 0, 100% 0, 100% 50px, 50% 100px, 0 50px);
+  transform: rotateX(20deg);
+  transition: 300ms;
+  transition-delay: 200ms;
+  position: absolute;
+}
+.message-top.open {
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+}
+.message-top.open::before {
+  transform: rotateX(180deg);
+  transition-delay: 0;
+  background-color: #266b74;
+}
+.message-top.outing {
+  transform: translateY(600px);
 }
